@@ -14,9 +14,11 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Lucius' Playground
+name: "Lucius' Blog"
+author: Lucius Luo
 email: lucius0228@gmail.com
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://luciusluo.githun.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll
 
@@ -30,7 +32,10 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
-author: Lucius Luo
+
+header_pages:
+  - about.md
+  - blog_archive.md
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

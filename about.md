@@ -1,19 +1,15 @@
 ---
 layout: page
-title: About
+title: 🀄About
 permalink: /about/
 ---
-Change
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+{:refdef: style="text-align: center;"}
+![](/assets/img/profile-pic.JPG){:height="45%" width="40%"}
+{: refdef}
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+This is Lucius Luo, and welcome to my site! I'm currently a 4<sup>th</sup>-year Computer Engineering undergrad at [UCSB](https://www.ucsb.edu). I'm using this blog to document my learning notes and share my learning paths with others. 
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+I'm interested in the intersection of CV and NLP, and broadly AutoML. I believe that the best way to learn new knowledge is to understand their fundamental structures, and compare them with those of the old ones. 
 
-
-[jekyll-organization]: https://github.com/jekyll
+My fav words: addition, comparison, assumption, generalization. 
