@@ -1,15 +1,15 @@
 ---
 layout: page
-title: 🀄About
+title: About🙋‍♂️
 permalink: /about/
 ---
 
-{:refdef: style="text-align: center;"}
-![](/assets/img/profile-pic.JPG){:height="45%" width="40%"}
-{: refdef}
 
-This is Lucius Luo, and welcome to my site! I'm currently a 4<sup>th</sup>-year Computer Engineering undergrad at [UCSB](https://www.ucsb.edu). I'm using this blog to document my learning notes and share my learning paths with others. 
+<div class= "image-cropper">
+    <img src="/assets/img/profile-pic3.JPG">
+</div><br>
 
-I'm interested in the intersection of CV and NLP, and broadly AutoML. I believe that the best way to learn new knowledge is to understand their fundamental structures, and compare them with those of the old ones. 
+This is Yuxiao (Lucius) Luo, and welcome to my site! I'm currently a 4<sup>th</sup>-year Computer Engineering undergrad at [UCSB](https://www.ucsb.edu). I'm using this blog to document my learning notes and share my learning paths with others. I may also post some interesting ideas or papers here in hope of sparkling up the creativity of whoever visits my website :)
 
-My fav words: addition, comparison, assumption, generalization. 
+I'm interested in the intersection of CV and NLP, and other broad topics about ML. I believe that the best way to learn new knowledge is to understand their fundamental structure and compare them with the old ones. 
+

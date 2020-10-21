@@ -3,3 +3,12 @@
 ---
 
 @import "minima";
+
+.image-cropper {
+    width: 50%;
+    height: 50%;
+    overflow: hidden;
+    border-radius: 60%;
+    margin: auto;
+    display: block;
+}

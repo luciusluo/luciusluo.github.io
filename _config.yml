@@ -26,7 +26,7 @@ github_username:  jekyll
 markdown: kramdown
 
 # Removed gem-based minima theme
-# theme: minima
+# theme: jekyll-theme-minimal
 
 plugins: 
   - jekyll-feed

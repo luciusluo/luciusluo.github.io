@@ -1,7 +1,6 @@
 ---
 layout: page
-title: 💡Blog
-permalink: /blog_archive/
+title: Blog💡
+permalink: /index.md/
 ---
 
-# Hello World #

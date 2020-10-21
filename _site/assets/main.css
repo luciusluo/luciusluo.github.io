@@ -504,3 +504,11 @@ table {
     color: #008080; }
   .highlight .il {
     color: #099; }
+
+.image-cropper {
+  width: 50%;
+  height: 50%;
+  overflow: hidden;
+  border-radius: 60%;
+  margin: auto;
+  display: block; }
