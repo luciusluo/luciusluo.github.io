@@ -23,14 +23,18 @@ in 1970, back-propagtion was later introduced to train neural network in 1974 by
 
 Rumelhart and et al.'s paper, illustrating how back-propagation can adjust the weights of the network to better minimize the error between actual and desired output vectors, demonstrates the algorithm's ability to create new features, work faster, and sovle problems that were "insoluble" by some earlier approaches, including the [Perceptrons](https://en.wikipedia.org/wiki/Perceptron).
 
-Not long after Rumelhart and et al.'s paper came out, a series of variants of the Backprop model were also invented, among which the most important ones are the **Back-propagation Through Time (BPTT)**, **Epochwise BPTT**, **Truncated BPTT (TrBPTT)**, and **Real Time Recurrent Learning (RTRL)**, again all designed by Paul Webos in his another influential [paper](http://axon.cs.byu.edu/Dan/678/papers/Recurrent/Werbos.pdf). 
+Not long after Rumelhart and et al.'s paper came out, a series of variants of the Backprop model were also invented, among which the most important ones are the **Back-propagation Through Time (BPTT)** by [Pearlmutter](https://gribblelab.org/compneuro2012/readings/Pearlmutter_1989_NeuralComputation.pdf) in 1989, **Epochwise BPTT**, **Truncated BPTT (TrBPTT)**, and **Real Time Recurrent Learning (RTRL)**, well explained by Paul Webos in his another influential [paper](http://axon.cs.byu.edu/Dan/678/papers/Recurrent/Werbos.pdf) and Ronald Williams and David Zipser in their 1990 [article](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.51.7567&rep=rep1&type=pdf). 
 
 In this post, I will illustrate how the simple, initial Backprop model evolves into the later BPTT and its variants, which further lay down a solid foundation for another powerful model: [Long Short-Term Memory (LSTM)](https://en.wikipedia.org/wiki/Long_short-term_memory). I will talk about LSTM in the next post. 
  
 
 - <a href="#hint">A History of History</a>
 - <a href="#bp">How Does Backpropagation Work?</a>
-- <a href="#train_bp">How to train in Backpropagation?</a>
+  - <a href="#train_bp">How to train in Backpropagation?</a>
+- <a href="#bptt">How Does BPTT Work?</a>
+- <a href="#e-tr">Epochwise and Truncated BPTT</a>
+- <a href="#rtrl">Real Time Recurrent Learning</a>
+
 <br>
 <h3><a id="bp"></a>How Does Backprop Work?</h3>
 {:refdef: style="text-align: center;"} 
@@ -133,7 +137,6 @@ $$
 \end{align*}
 $$
 </div>
-<br>
 
 Okay! Now let's first start with an example to compute the derivative of $$H$$ w.r.t the output unit $$i$$ at the **output layer** $$L$$ using the chain rule:
 <div style="text-align:center;">
@@ -202,5 +205,16 @@ We will use this wonderful GIF below to explain how to train a network using Bac
 *Figure 3. Forward and Backward Pass of Back-propagation([Image Source](https://machinelearningknowledge.ai/animated-explanation-of-feed-forward-neural-network-architecture/)))* 
 {: refdef}
 
-For each training sample from the dataset, say $$T_0$$, we will feed the input vector into the network to perform a forward pass. After we obtain the predicted output, we will calculate the error(loss) function and perform a backward pass to update each weight in the matrix in each layer. After all weights are updated, we will then enter the next training epoch and feed in the next sample $$T_1$$. The process repeats itself till we exhaust the training set.
+For each training sample from the dataset, say $$T_0$$, we will feed the input vector into the network to perform a forward pass. After we obtain the predicted output, we will calculate the error(loss) function and perform a backward pass to update each weight in the matrix in each layer. After all weights are updated, we will then enter the next training epoch and feed in the next sample $$T_1$$. The process repeats itself till we exhaust all training samples.
 
+However, the training procedure in Backpropagation suffers from a major drawback termed [catastrophic forgetting](https://www.researchgate.net/publication/222068807_Avoiding_catastrophic_forgetting_by_coupling_two_reverberating_neural_networks). This problem happens when a net having already learned the first training sample is then trained on the second sample, the new update of the weights may entirely erase the information previously learned. This gives rise to our next model, **Backpropagation Through Time**, which greatly resolves the problem of Backprop.
+<br>
+
+
+<h3><a id="bptt"></a>How Does BPTT Work?<h3>
+<br>
+
+<h3><a id="e-tr"></a>Epochwise and Truncated BPTT</h3>
+<br>
+
+<h3><a id="rtrl"></a>Real Time Recurrent Learning</h3>
