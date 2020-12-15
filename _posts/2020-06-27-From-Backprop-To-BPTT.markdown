@@ -40,7 +40,7 @@ In this post, I will illustrate how the simple, initial Backprop model evolves i
 {:refdef: style="text-align: center;"} 
 ![](/assets/img/post_img/BP1.JPG){:height="50%" width="50%"}
 <br>
-*Figure 1. A simple fully connected network. (Image Source:(https://sites.cs.ucsb.edu/~xyan/))* 
+*Figure 1. A simple fully connected network. ([Image Source:](https://sites.cs.ucsb.edu/~xyan/))* 
 {: refdef}
 
 Let us start with some basic math notations. The diagram above is a fully connected neural network with $$ L-1 $$ hidden layers and the output layer $$a^{(L)}$$. The input vector $$ X $$ is an $$N$$-by-$$1$$ vector. $$ W^{(i)} $$ represents the matrix multiplied by the feedforward input at each layer $$i$$, while $$ b^{(i)} $$ is a bias vector added at each hidden layer. $$ a^{(i)} $$ is an $$M$$-by-$$1$$ vector storing each hidden neuron at layer $$i$$. At last, $$ Y^{(k)} $$ represents the desired value of a single output unit $$k$$ inside the $$K$$-by-$$1$$ label vector(from the training samples). Note that in many cases, $$dim(a^{(i)})$$ may not necessarily equals $$dim(X)$$ and $$dim(a^{(i)})$$ can vary throughout the layers.
