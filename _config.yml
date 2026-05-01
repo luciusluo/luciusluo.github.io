@@ -13,12 +13,12 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Andy' Blog
-# name: "Andy ' Blog"
+title: 🐧 Andy's Blog
+name: Andy's Blog
 author: Andy Luo
 email: lucius0228@gmail.com
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://andyluo.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://luciusluo.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll
 
@@ -34,8 +34,7 @@ plugins:
 
 
 header_pages:
-  - about.md
-  - blog_archive.md
+  - index.md
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
