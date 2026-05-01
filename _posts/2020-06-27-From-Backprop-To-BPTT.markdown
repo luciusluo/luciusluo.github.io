@@ -2,7 +2,7 @@
 layout: post
 title:  "From Backprop to BPTT"
 date:   2020-06-27 12:43:01 -0700
-author: By Lucius Luo
+author: By Andy Luo
 categories: jekyll update
 ---
 
