@@ -2,8 +2,7 @@
  * Site header
  */
 .site-header {
-  background: #33343A;
-  opacity: 0.9;
+  background: $background-color;
   min-height: $spacing-unit * 1.865;
 
   // Positioning context for the mobile navigation icon
@@ -12,7 +11,7 @@
 
 .site-title {
   @include relative-font-size(1.625);
-  color: #FFFFFF;
+  color: $text-color;
   font-weight: 300;
   line-height: $base-line-height * $base-font-size * 2.25;
   letter-spacing: -1px;
@@ -21,7 +20,7 @@
 
   &,
   &:visited {
-    color: #FFFFFF;
+    color: $text-color;
   }
 }
 
@@ -39,7 +38,7 @@
   }
 
   .page-link {
-    color: #FFFFFF;;
+    color: $text-color;
     line-height: $base-line-height;
 
     // Gaps between nav items, but not on the last one
