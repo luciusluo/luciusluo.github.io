@@ -104,6 +104,34 @@
 
 
 /**
+ * Archive page
+ */
+.archive-cat-heading {
+  @include relative-font-size(1.5);
+  margin-top: $spacing-unit;
+  padding-bottom: $spacing-unit / 4;
+  border-bottom: 1px solid $grey-color-light;
+}
+
+.archive-subcat-heading {
+  @include relative-font-size(1.125);
+  margin-top: $spacing-unit / 2;
+  margin-left: $spacing-unit;
+  color: $grey-color-dark;
+}
+
+.archive-post {
+  padding: 3px 0;
+  .post-meta { margin-right: 10px; }
+}
+
+.archive-post--indented {
+  margin-left: $spacing-unit * 2;
+}
+
+
+
+/**
  * Site footer
  */
 .site-footer {

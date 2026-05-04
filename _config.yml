@@ -33,8 +33,14 @@ plugins:
   - jekyll-seo-tag
 
 
+collections:
+  notes:
+    output: true
+    permalink: /notes/:path/
+
 header_pages:
   - index.md
+  - archive.md
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

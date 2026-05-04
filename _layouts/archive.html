@@ -1,0 +1,66 @@
+---
+layout: default
+---
+
+<div class="archive-page">
+  <h1 class="page-heading">{{ page.title }}</h1>
+
+  {% comment %} Collect top-level categories from file paths {% endcomment %}
+  {% assign top_cats = "" | split: "" %}
+  {% for note in site.notes %}
+    {% assign parts = note.path | split: "/" %}
+    {% comment %} path: _notes/TopCat/[SubCat/]file.md, parts[1] = top cat {% endcomment %}
+    {% assign top_cat = parts[1] %}
+    {% unless top_cats contains top_cat %}
+      {% assign top_cats = top_cats | push: top_cat %}
+    {% endunless %}
+  {% endfor %}
+  {% assign top_cats = top_cats | sort %}
+
+  {% for top_cat in top_cats %}
+    <h2 class="archive-cat-heading">{{ top_cat }}</h2>
+
+    {% comment %} Collect subcategories under this top-level category {% endcomment %}
+    {% assign sub_cats = "" | split: "" %}
+    {% for note in site.notes %}
+      {% assign parts = note.path | split: "/" %}
+      {% if parts[1] == top_cat and parts.size == 4 %}
+        {% unless sub_cats contains parts[2] %}
+          {% assign sub_cats = sub_cats | push: parts[2] %}
+        {% endunless %}
+      {% endif %}
+    {% endfor %}
+    {% assign sub_cats = sub_cats | sort %}
+
+    {% comment %} Notes directly under top category (no subcategory, path depth = 3) {% endcomment %}
+    {% for note in site.notes %}
+      {% assign parts = note.path | split: "/" %}
+      {% if parts[1] == top_cat and parts.size == 3 %}
+        <div class="archive-post">
+          {% if note.date %}<span class="post-meta">{{ note.date | date: "%b %-d, %Y" }}</span>{% endif %}
+          <a class="post-link" href="{{ note.url | relative_url }}">{{ note.title | escape }}</a>
+        </div>
+      {% endif %}
+    {% endfor %}
+
+    {% comment %} Notes under subcategories (path depth = 4) {% endcomment %}
+    {% for sub_cat in sub_cats %}
+      <h3 class="archive-subcat-heading">{{ sub_cat }}</h3>
+      {% for note in site.notes %}
+        {% assign parts = note.path | split: "/" %}
+        {% if parts[1] == top_cat and parts[2] == sub_cat %}
+          <div class="archive-post archive-post--indented">
+            {% if note.date %}<span class="post-meta">{{ note.date | date: "%b %-d, %Y" }}</span>{% endif %}
+            <a class="post-link" href="{{ note.url | relative_url }}">{{ note.title | escape }}</a>
+          </div>
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+
+  {% endfor %}
+
+  {% if top_cats.size == 0 %}
+    <p>No notes yet. Add markdown files under <code>_notes/</code> to get started.</p>
+  {% endif %}
+
+</div>
